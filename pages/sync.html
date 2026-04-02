@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust | Sync</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+<!-- Fonts -->
+<!-- Icons -->
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#FDF8F5] dark:bg-[#1C1B1A] tonal-shift bg-[#F2EDEA] dark:bg-[#2A2826] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#7A5642] dark:text-[#DCAE96] cursor-pointer">menu</span>
+<a class="text-2xl font-extrabold text-[#7A5642] dark:text-[#DCAE96] font-['Plus_Jakarta_Sans'] tracking-tight" href="../index.html">Wanderlust</a>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-[#34322F]/60 font-semibold hover:opacity-80 transition-opacity" href="explore.html">Explore</a>
+<a class="text-[#34322F]/60 font-semibold hover:opacity-80 transition-opacity" href="trips.html">Journal</a>
+<a class="text-[#34322F]/60 font-semibold hover:opacity-80 transition-opacity" href="saved.html">Saved</a>
+<a class="text-[#7A5642] font-semibold hover:opacity-80 transition-opacity" href="sync.html">Sync</a>
+<a class="text-[#34322F]/60 font-semibold hover:opacity-80 transition-opacity" href="profile.html">Profile</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a traveler with a warm smile and a soft mountain landscape in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXfXDg_demw4HaR0thX8SYNvRIjO7XdTPR6xkRHxYeXtz6dFfj6z6-ct-H3I_c5Gnt4isB_T2oqDo6y3u79T8jIsfyAEFVZhho72WWHZEE5_Vti3OWS4dS4RHx8eWQP0d4lcFMfVfnAD3fI-_Zjr1cI3z-HfM8szitMPr_7KnX5v-3uVSlUDjnAWkstPs2vdWEamP2nIyPmHf7gqiTq2TVaKWBe7Eg0va1FSqvvuJwzPnjhZ_kAXltFzP30OMm97qg-cjFk6mwow"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-12 pb-32">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="bg-surface-container rounded-xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden relative">
+<div class="flex-1 z-10">
+<h2 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface mb-6 tracking-tight leading-tight">Ready for the Off-Grid Leg?</h2>
+<p class="text-on-surface-variant text-lg mb-8 max-w-xl font-medium leading-relaxed">
+                        Prepare the Kyoto and Tokyo itinerary for disconnected exploration. Ensure detail pages, saved spots, and the shared journal are mirrored locally before you leave signal behind.
+                    </p>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-10 py-5 rounded-full font-bold text-lg hover:opacity-90 active:scale-95 transition-all flex items-center gap-3">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                        Generate Offline PDF Guide
+                    </button>
+</div>
+<div class="flex-1 w-full max-w-md h-80 rounded-xl overflow-hidden relative shadow-lg">
+<img alt="Mountain Expedition" class="w-full h-full object-cover" data-alt="majestic high-altitude mountain peaks at sunrise with dramatic shadows and deep orange sunlight hitting the ridges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvW4HybzVoOD_5k3_-Y5lFURe-27k56EjKJMucIgd0SbbGTmlOTzWnSYiFbETaJKIVh1Tt31j2LVmyqK8joJGFsd9amarn8A2NT5M3cEBUMiRf8yD2f_IRz8trAmMayXqH3oAUaLdsVUqHtbpKG-WUB7YEORaiWTnpDGvmWvuL7-i-IUzI1amhbqOpc9UdEkgPyINIQFRXxbCnw6p3dWM8MeZTdoOiO8ArvGzEhZhNL6mD2mrhMMgSF_ozBntqvc9lsCmvDuGzZg"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Main Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Package Integrity (High Priority Large Card) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-10 flex flex-col justify-between min-h-[340px]">
+<div>
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="text-2xl font-headline font-bold mb-2">Package Integrity</h3>
+<p class="text-on-surface-variant">Global Sync Status</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            Verified
+                        </div>
+</div>
+<div class="mb-4 flex justify-between items-end">
+<span class="text-5xl font-headline font-extrabold text-primary">98%</span>
+<span class="text-on-surface-variant font-semibold">2% Remaining (48 MB)</span>
+</div>
+<div class="w-full bg-surface-container h-6 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-primary-container h-full rounded-full w-[98%]"></div>
+</div>
+</div>
+<div class="flex gap-4 mt-8">
+<span class="text-on-tertiary-fixed-variant text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">history</span> Last synced: 2 mins ago
+                    </span>
+<span class="text-on-tertiary-fixed-variant text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">wifi_off</span> Offline ready
+                    </span>
+</div>
+</div>
+<!-- Expedition Crew (Asymmetric Accent Card) -->
+<div class="md:col-span-4 bg-surface-container-high rounded-xl p-10">
+<h3 class="text-2xl font-headline font-bold mb-8">Expedition Crew</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed border-4 border-surface-container-lowest flex items-center justify-center font-bold text-on-primary-fixed overflow-hidden">
+<img alt="Collaborator 1" class="w-full h-full object-cover" data-alt="portrait of a young man with glasses smiling in a sunlit library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVecoJf7V4ooFtDXOXKeFzkoxrnA-f8TrwuLo04TG4BKFVt3aFTeVBY_l5NruwPlDwjRhIe8W-vjtzsDBduRmX2_EYRMejgsudVJ81i3Hr7xghxNSML8eeIXvVU_kQ9uNYspqAHQsUHdvjOP7HUgPP-rADwY7sGAF-KkMLQrPbBag1h5xE-A00cBAPDKM7koS3pJ7HXEjRUJ3dmr583_WCqiIaR1r0ZQNutAmbdxswoBMEwTIi_jtk9AkiZQK6HmU2qoVIFZjc7Q"/>
+</div>
+<div>
+<p class="font-bold">Julian Vane</p>
+<p class="text-xs text-on-surface-variant font-medium">Lead Navigator ??Active</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed border-4 border-surface-container-lowest flex items-center justify-center font-bold text-on-secondary-fixed overflow-hidden">
+<img alt="Collaborator 2" class="w-full h-full object-cover" data-alt="close-up of a woman with braided hair smiling in an outdoor urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqnSy_qlSBsxUpK_1iNo-bCmK_KkaZd-yJzZmZ2tBRNuw2U94X4isz98IK2dKKSU9biRljFG4pLTlncKO-hAx3LTfYEFbSoW9mezkvXt-twgR0mvH8E5NxOqit10jgaJa_qzpRtww2AwWuj5l9tiwP0ZaHDUxkHQ0SdYDo-yiW5k4uHCrzg5Ge4pYTggY01UGIJucUO76-XaZIQMDsAgtMDbyh4GwSgfUGqA7TDWDlFwXqpkyyZ9WfyykaFw0gXro0oD6wS2xcKw"/>
+</div>
+<div>
+<p class="font-bold">Sofia Chen</p>
+<p class="text-xs text-on-surface-variant font-medium">Media Archivist ??Syncing</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed border-4 border-surface-container-lowest flex items-center justify-center font-bold text-on-tertiary-fixed overflow-hidden">
+<img alt="Collaborator 3" class="w-full h-full object-cover" data-alt="mature man with beard looking thoughtfully at the camera with soft indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Pi9WuGMo5-6w7Gw8EhnhOnrZIj9iURJ45DZImaXdWu3xkzKKq9V7-QT3SmE5VZr80QPZ3-bfm8xjkCsbzNt2O5BDax0_A_LfC2slg1ln_T-HoG1-ex8Bq_BBL-VqxaNbuwbDC92BmB_DItV_L0u_Vsq4JIvoMCKeun1-qS-lfqULiwlDo6108k7DxhToVCgf0w0fxAKDYtBocTqP4hTJujhapiysHEnGI58ie114-Lsv3pdv2sxwwGsQkYlZmun1JY7dmLWQZQ"/>
+</div>
+<div>
+<p class="font-bold">Marcus Thorne</p>
+<p class="text-xs text-on-surface-variant font-medium">Safety Officer ??Idle</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-12 py-4 border-2 border-outline-variant rounded-full font-bold text-primary hover:bg-surface-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">person_add</span>
+                    Manage Crew
+                </button>
+</div>
+<!-- Sync Ecosystem Toggles -->
+<div class="md:col-span-12">
+<div class="bg-surface-container-lowest rounded-xl p-10">
+<h3 class="text-2xl font-headline font-bold mb-10">Sync Ecosystem</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Media Card -->
+<div class="p-8 rounded-lg bg-surface-container-low flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<div class="bg-primary-container p-4 rounded-xl">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">image</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<div>
+<p class="text-xl font-bold mb-1">Visual Media</p>
+<p class="text-on-surface-variant text-sm">4.2 GB of raw and optimized travel photography</p>
+</div>
+</div>
+<!-- Maps Card -->
+<div class="p-8 rounded-lg bg-surface-container-low flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<div class="bg-secondary-container p-4 rounded-xl">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">map</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<div>
+<p class="text-xl font-bold mb-1">Vector Maps</p>
+<p class="text-on-surface-variant text-sm">Topo overlays and route metadata for offline use</p>
+</div>
+</div>
+<!-- Documents Card -->
+<div class="p-8 rounded-lg bg-surface-container-low flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<div class="bg-tertiary-container p-4 rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<div>
+<p class="text-xl font-bold mb-1">Field Logs</p>
+<p class="text-on-surface-variant text-sm">Markdowns, permits, and team coordination docs</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-8 md:hidden">
+<div class="bg-[#F2EDEA]/80 backdrop-blur-3xl fixed bottom-6 left-6 right-6 rounded-[3rem] overflow-hidden flex justify-around items-center px-4 py-2 shadow-[0_12px_40px_rgba(52,50,47,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="explore.html">
+<span class="material-symbols-outlined">travel_explore</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="journal.html">
+<span class="material-symbols-outlined">book</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="saved.html">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Saved</span>
+</a>
+<!-- Active State: Sync -->
+<a class="flex flex-col items-center justify-center bg-[#DCAE96] dark:bg-[#7A5642] text-white rounded-full p-4 active:scale-90 duration-200 ease-out" href="sync.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sync</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Sync</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="profile.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
+

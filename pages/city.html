@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - Kyoto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+<style>
+  #city-search:focus { outline: none; }
+  .place-card { transition: transform 0.2s ease; }
+  .place-card:hover { transform: translateY(-2px); }
+  .add-btn.saved {
+    background: #c9e6d7;
+    color: #334c41;
+  }
+  .add-btn.saved .btn-label { display: none; }
+  .add-btn.saved .btn-added { display: inline; }
+  .add-btn .btn-added { display: none; }
+</style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased pb-36">
+
+<!-- Hero -->
+<div class="relative w-full" style="height:260px">
+  <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOFj7yWDXlEhtJxs5P0MFhLPdSiyHb7YVUbWOfYqCuJFWHSwOuVEjFI1Z_FT_N_4JXmpiC2-b22IlZVrVh2qzBqkbYVFnmWOhZoTiCn7dUoNn8_SDDM17JrHqFlkuLQFEa2SYDFmO1Kw-0Vw2ZSK-Jm5djFCH2ILsJqOjFbWVxJqDPqOllSsBGBWlDHnKEMXVBMJ7kl9bQT3N9q7oTqn7a5JHVz5t2IyEoY8mnOGdMpD8pXNHr5PJKkOJ1e6w1bO6H8h9SFQ" alt="Kyoto"/>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/30"></div>
+  <!-- Back -->
+  <a href="country.html" class="absolute top-5 left-5 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center">
+    <span class="material-symbols-outlined text-white">arrow_back</span>
+  </a>
+  <!-- Save -->
+  <button class="absolute top-5 right-5 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center" onclick="toggleSave(this)">
+    <span class="material-symbols-outlined text-white save-icon">favorite_border</span>
+  </button>
+  <!-- City info -->
+  <div class="absolute bottom-6 left-6 right-6">
+    <p class="text-white/70 text-xs font-semibold mb-1">🇯🇵 Japan · Kansai Region</p>
+    <h1 class="font-headline text-4xl font-extrabold text-white mb-2">Kyoto</h1>
+    <div class="flex gap-3">
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">38 Spots</span>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">⭐ 4.9</span>
+      <span class="bg-[#dcae96]/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">Active Trip</span>
+    </div>
+  </div>
+</div>
+
+<main class="max-w-4xl mx-auto px-5 pt-6">
+
+  <!-- Search -->
+  <div class="relative mb-5">
+    <input
+      id="city-search"
+      type="text"
+      placeholder="Search attractions, food, hidden gems…"
+      class="w-full h-13 pl-12 pr-5 rounded-full bg-surface-container border-none text-on-surface placeholder:text-on-surface-variant/40 focus:bg-surface-container-lowest transition-all"
+      oninput="filterPlaces()"
+    />
+    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+    <span id="result-count" class="absolute right-5 top-1/2 -translate-y-1/2 text-xs text-on-surface-variant/60 font-semibold">38</span>
+  </div>
+
+  <!-- Category chips -->
+  <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1 mb-6">
+    <button class="chip selected flex-shrink-0" onclick="selectChip(this,'all')">All</button>
+    <button class="chip flex-shrink-0" onclick="selectChip(this,'attraction')">
+      <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">temple_buddhist</span>
+      景點
+    </button>
+    <button class="chip flex-shrink-0" onclick="selectChip(this,'food')">
+      <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">restaurant</span>
+      美食
+    </button>
+    <button class="chip flex-shrink-0" onclick="selectChip(this,'nature')">
+      <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">park</span>
+      自然
+    </button>
+    <button class="chip flex-shrink-0" onclick="selectChip(this,'hidden')">
+      <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">explore</span>
+      隱藏寶地
+    </button>
+    <button class="chip flex-shrink-0" onclick="selectChip(this,'nightlife')">
+      <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">nightlife</span>
+      夜生活
+    </button>
+  </div>
+
+  <!-- Place grid -->
+  <div id="place-grid" class="grid grid-cols-1 gap-4">
+
+    <!-- Fushimi Inari -->
+    <div class="place-card rounded-[2rem] bg-surface-container-lowest overflow-hidden flex gap-0" data-category="attraction" data-name="fushimi inari shrine">
+      <div class="w-28 flex-shrink-0 relative overflow-hidden" style="height:120px">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbaILY535eNwr8Cm29ID6NvZCWGrYBbkji4Alm2GPJ_IF_KdgXlFO5yxXLOGf9l4lyTqJhBT35vQyTaULxdrEUsSxO9NE1yiJC1ZMN9t64BAP-XLefT5uTz2rh685VkvtIvS0EHdg-xei9Ak2RnHwnomZwtar35NhHt7IjIkTvAODMf5KIeWrjeBN4RUTLjIu_HJncCK7nwS8x5TX4tmyZGXKXozDyf9nOW7CYaXR5GH31SdX6_mwhSIEfXbEh3aUWw44IicCLCQ" alt="Fushimi Inari"/>
+      </div>
+      <div class="flex-1 p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <h4 class="font-headline font-bold text-on-surface leading-tight">Fushimi Inari Shrine</h4>
+            <span class="text-xs text-on-surface-variant flex-shrink-0">⭐ 4.9</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold bg-[#dcae96]/20 text-primary px-2 py-0.5 rounded-full mb-2">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">temple_buddhist</span>景點
+          </span>
+          <p class="text-on-surface-variant text-xs leading-relaxed">Thousands of vermillion torii gates winding up Mt. Inari — an iconic Kyoto landmark.</p>
+        </div>
+        <button class="add-btn mt-3 self-start flex items-center gap-1.5 text-xs font-bold bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full" onclick="addToJournal(this, 'Fushimi Inari Shrine')">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="btn-label">Add to Saved</span>
+          <span class="btn-added">✓ Saved</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Arashiyama Bamboo -->
+    <div class="place-card rounded-[2rem] bg-surface-container-lowest overflow-hidden flex gap-0" data-category="nature" data-name="arashiyama bamboo grove">
+      <div class="w-28 flex-shrink-0 relative overflow-hidden" style="height:120px">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOFj7yWDXlEhtJxs5P0MFhLPdSiyHb7YVUbWOfYqCuJFWHSwOuVEjFI1Z_FT_N_4JXmpiC2-b22IlZVrVh2qzBqkbYVFnmWOhZoTiCn7dUoNn8_SDDM17JrHqFlkuLQFEa2SYDFmO1Kw-0Vw2ZSK-Jm5djFCH2ILsJqOjFbWVxJqDPqOllSsBGBWlDHnKEMXVBMJ7kl9bQT3N9q7oTqn7a5JHVz5t2IyEoY8mnOGdMpD8pXNHr5PJKkOJ1e6w1bO6H8h9SFQ" alt="Arashiyama"/>
+      </div>
+      <div class="flex-1 p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <h4 class="font-headline font-bold text-on-surface leading-tight">Arashiyama Bamboo Grove</h4>
+            <span class="text-xs text-on-surface-variant flex-shrink-0">⭐ 4.8</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold bg-[#c9e6d7]/40 text-[#334c41] px-2 py-0.5 rounded-full mb-2">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">park</span>自然
+          </span>
+          <p class="text-on-surface-variant text-xs leading-relaxed">A towering bamboo forest that creates an otherworldly, rustling canopy walk.</p>
+        </div>
+        <button class="add-btn mt-3 self-start flex items-center gap-1.5 text-xs font-bold bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full" onclick="addToJournal(this, 'Arashiyama Bamboo Grove')">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="btn-label">Add to Saved</span>
+          <span class="btn-added">✓ Saved</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Nishiki Market -->
+    <div class="place-card rounded-[2rem] bg-surface-container-lowest overflow-hidden flex gap-0" data-category="food" data-name="nishiki market">
+      <div class="w-28 flex-shrink-0 relative overflow-hidden" style="height:120px">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATuM5hkMFEFf0TBDgwByJ5fIHCjd5EkzZaB1vWHXvk2MFp0E2vCU6JzD7BFgr14_uLRuNRKbk0h-JZPFMRSC6JiA4-FWD2qAkZ4BgUXPRxXqBzrVJXDuP0C9w1ys97AGKAkqR3BKXLZS_AKzHY4gO-FQ3BjSBpFXJk4UZJDkTJCuArtYkEkiAhRaJE7iICO8RqWlnQWGxBsJjgKPHQbY0oJsTCQgU0x5gCqEPwjEcPJRMCBRHM3AkS-0fAY0f6K2wMXMmqfig" alt="Nishiki Market"/>
+      </div>
+      <div class="flex-1 p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <h4 class="font-headline font-bold text-on-surface leading-tight">Nishiki Market</h4>
+            <span class="text-xs text-on-surface-variant flex-shrink-0">⭐ 4.7</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full mb-2">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">restaurant</span>美食
+          </span>
+          <p class="text-on-surface-variant text-xs leading-relaxed">Kyoto's lively covered market — fresh tofu, pickles, street skewers, and local sweets.</p>
+        </div>
+        <button class="add-btn mt-3 self-start flex items-center gap-1.5 text-xs font-bold bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full" onclick="addToJournal(this, 'Nishiki Market')">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="btn-label">Add to Saved</span>
+          <span class="btn-added">✓ Saved</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Philosopher's Path -->
+    <div class="place-card rounded-[2rem] bg-surface-container-lowest overflow-hidden flex gap-0" data-category="nature" data-name="philosopher's path">
+      <div class="w-28 flex-shrink-0 relative overflow-hidden" style="height:120px">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbaILY535eNwr8Cm29ID6NvZCWGrYBbkji4Alm2GPJ_IF_KdgXlFO5yxXLOGf9l4lyTqJhBT35vQyTaULxdrEUsSxO9NE1yiJC1ZMN9t64BAP-XLefT5uTz2rh685VkvtIvS0EHdg-xei9Ak2RnHwnomZwtar35NhHt7IjIkTvAODMf5KIeWrjeBN4RUTLjIu_HJncCK7nwS8x5TX4tmyZGXKXozDyf9nOW7CYaXR5GH31SdX6_mwhSIEfXbEh3aUWw44IicCLCQ" alt="Philosopher's Path"/>
+      </div>
+      <div class="flex-1 p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <h4 class="font-headline font-bold text-on-surface leading-tight">Philosopher's Path</h4>
+            <span class="text-xs text-on-surface-variant flex-shrink-0">⭐ 4.7</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold bg-[#c9e6d7]/40 text-[#334c41] px-2 py-0.5 rounded-full mb-2">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">park</span>自然
+          </span>
+          <p class="text-on-surface-variant text-xs leading-relaxed">A cherry blossom-lined stone path along a canal — most magical in spring.</p>
+        </div>
+        <button class="add-btn mt-3 self-start flex items-center gap-1.5 text-xs font-bold bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full" onclick="addToJournal(this, 'Philosopher\'s Path')">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="btn-label">Add to Saved</span>
+          <span class="btn-added">✓ Saved</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pontocho Alley (Hidden) -->
+    <div class="place-card rounded-[2rem] bg-surface-container-lowest overflow-hidden flex gap-0" data-category="hidden" data-name="pontocho alley hidden gem">
+      <div class="w-28 flex-shrink-0 relative overflow-hidden" style="height:120px">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOFj7yWDXlEhtJxs5P0MFhLPdSiyHb7YVUbWOfYqCuJFWHSwOuVEjFI1Z_FT_N_4JXmpiC2-b22IlZVrVh2qzBqkbYVFnmWOhZoTiCn7dUoNn8_SDDM17JrHqFlkuLQFEa2SYDFmO1Kw-0Vw2ZSK-Jm5djFCH2ILsJqOjFbWVxJqDPqOllSsBGBWlDHnKEMXVBMJ7kl9bQT3N9q7oTqn7a5JHVz5t2IyEoY8mnOGdMpD8pXNHr5PJKkOJ1e6w1bO6H8h9SFQ" alt="Pontocho"/>
+      </div>
+      <div class="flex-1 p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <h4 class="font-headline font-bold text-on-surface leading-tight">Pontocho Alley</h4>
+            <span class="text-xs text-on-surface-variant flex-shrink-0">⭐ 4.8</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full mb-2">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">explore</span>隱藏寶地
+          </span>
+          <p class="text-on-surface-variant text-xs leading-relaxed">A narrow lantern-lit geisha district with intimate kaiseki restaurants hidden behind wooden facades.</p>
+        </div>
+        <button class="add-btn mt-3 self-start flex items-center gap-1.5 text-xs font-bold bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full" onclick="addToJournal(this, 'Pontocho Alley')">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="btn-label">Add to Saved</span>
+          <span class="btn-added">✓ Saved</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Kinkaku-ji -->
+    <div class="place-card rounded-[2rem] bg-surface-container-lowest overflow-hidden flex gap-0" data-category="attraction" data-name="kinkaku-ji golden pavilion temple">
+      <div class="w-28 flex-shrink-0 relative overflow-hidden" style="height:120px">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATuM5hkMFEFf0TBDgwByJ5fIHCjd5EkzZaB1vWHXvk2MFp0E2vCU6JzD7BFgr14_uLRuNRKbk0h-JZPFMRSC6JiA4-FWD2qAkZ4BgUXPRxXqBzrVJXDuP0C9w1ys97AGKAkqR3BKXLZS_AKzHY4gO-FQ3BjSBpFXJk4UZJDkTJCuArtYkEkiAhRaJE7iICO8RqWlnQWGxBsJjgKPHQbY0oJsTCQgU0x5gCqEPwjEcPJRMCBRHM3AkS-0fAY0f6K2wMXMmqfig" alt="Kinkaku-ji"/>
+      </div>
+      <div class="flex-1 p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <h4 class="font-headline font-bold text-on-surface leading-tight">Kinkaku-ji (Golden Pavilion)</h4>
+            <span class="text-xs text-on-surface-variant flex-shrink-0">⭐ 4.9</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold bg-[#dcae96]/20 text-primary px-2 py-0.5 rounded-full mb-2">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">temple_buddhist</span>景點
+          </span>
+          <p class="text-on-surface-variant text-xs leading-relaxed">A glittering gold-leaf temple reflected in a serene mirror pond — Kyoto's most iconic sight.</p>
+        </div>
+        <button class="add-btn mt-3 self-start flex items-center gap-1.5 text-xs font-bold bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full" onclick="addToJournal(this, 'Kinkaku-ji')">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="btn-label">Add to Saved</span>
+          <span class="btn-added">✓ Saved</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gion Bar -->
+    <div class="place-card rounded-[2rem] bg-surface-container-lowest overflow-hidden flex gap-0" data-category="nightlife" data-name="gion bar nightlife district">
+      <div class="w-28 flex-shrink-0 relative overflow-hidden" style="height:120px">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOFj7yWDXlEhtJxs5P0MFhLPdSiyHb7YVUbWOfYqCuJFWHSwOuVEjFI1Z_FT_N_4JXmpiC2-b22IlZVrVh2qzBqkbYVFnmWOhZoTiCn7dUoNn8_SDDM17JrHqFlkuLQFEa2SYDFmO1Kw-0Vw2ZSK-Jm5djFCH2ILsJqOjFbWVxJqDPqOllSsBGBWlDHnKEMXVBMJ7kl9bQT3N9q7oTqn7a5JHVz5t2IyEoY8mnOGdMpD8pXNHr5PJKkOJ1e6w1bO6H8h9SFQ" alt="Gion"/>
+      </div>
+      <div class="flex-1 p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <h4 class="font-headline font-bold text-on-surface leading-tight">Gion District at Night</h4>
+            <span class="text-xs text-on-surface-variant flex-shrink-0">⭐ 4.8</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full mb-2">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">nightlife</span>夜生活
+          </span>
+          <p class="text-on-surface-variant text-xs leading-relaxed">Kyoto's geisha quarter transforms after dark — intimate bars, sake tasting, and maybe a geiko sighting.</p>
+        </div>
+        <button class="add-btn mt-3 self-start flex items-center gap-1.5 text-xs font-bold bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full" onclick="addToJournal(this, 'Gion District at Night')">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="btn-label">Add to Saved</span>
+          <span class="btn-added">✓ Saved</span>
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /place-grid -->
+
+  <p id="no-results" class="hidden text-center text-on-surface-variant py-12">No spots match your search.</p>
+
+</main>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-36 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-sm font-semibold px-5 py-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-[60] whitespace-nowrap">
+  Saved
+</div>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-6 md:hidden">
+  <div class="bg-[#F2EDEA]/85 backdrop-blur-3xl rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-2 py-2">
+    <a href="explore.html" class="flex flex-col items-center justify-center bg-[#DCAE96] text-white rounded-full p-3 gap-0.5">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">travel_explore</span>
+      <span class="text-[11px] font-semibold font-body">Explore</span>
+    </a>
+    <a href="journal.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">book</span>
+      <span class="text-[11px] font-semibold font-body">Journal</span>
+    </a>
+    <a href="saved.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">favorite</span>
+      <span class="text-[11px] font-semibold font-body">Saved</span>
+    </a>
+    <a href="sync.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">sync</span>
+      <span class="text-[11px] font-semibold font-body">Sync</span>
+    </a>
+    <a href="profile.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">person</span>
+      <span class="text-[11px] font-semibold font-body">Profile</span>
+    </a>
+  </div>
+</nav>
+
+<script src="../assets/js/city.js"></script>
+</body>
+</html>

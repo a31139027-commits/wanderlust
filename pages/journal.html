@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - Journal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+<style>
+  /* Prevent browser auto-translation from breaking icon ligatures */
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined' !important; }
+</style>
+</head>
+<body class="bg-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#FDF8F5] dark:bg-[#1C1B1A]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<a href="trips.html" class="flex items-center gap-1.5 text-[#7A5642] hover:opacity-70 transition-opacity">
+  <span class="material-symbols-outlined text-xl" translate="no">arrow_back</span>
+  <span class="text-sm font-semibold hidden sm:inline">All Trips</span>
+</a>
+<span class="text-[#7A5642]/30">|</span>
+<a class="text-xl font-extrabold text-[#7A5642] dark:text-[#DCAE96] font-['Plus_Jakarta_Sans'] tracking-tight" href="../index.html">Wanderlust</a>
+</div>
+<div class="flex items-center gap-3 bg-secondary-container px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container text-sm" style="font-variation-settings: 'FILL' 1;">sync</span>
+<span class="text-on-secondary-container font-semibold text-xs font-label">Synced &amp; Ready</span>
+</div>
+</div>
+<div class="h-4 bg-[#F2EDEA] dark:bg-[#2A2826] w-full opacity-50"></div>
+</header>
+<main class="max-w-6xl mx-auto px-6 lg:px-16 pt-8">
+<!-- Header Section -->
+<div class="mb-10">
+<h2 id="trip-title" class="text-5xl font-headline font-extrabold tracking-tighter text-on-surface mb-2">Autumn Japan Trip</h2>
+<p id="trip-subtitle" class="text-on-surface-variant font-body">Shared journal from Kyoto discovery into Tokyo city nights</p>
+</div>
+<!-- Day Selection Tabs -->
+<div class="flex gap-4 mb-3 overflow-x-auto pb-2 no-scrollbar items-center" id="day-tabs">
+<button class="day-tab px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg transition-all active:scale-95 flex-shrink-0" data-day="1">Day 1</button>
+<button class="day-tab px-8 py-4 bg-surface-container-high text-on-surface-variant rounded-full font-bold hover:bg-surface-container-highest transition-all flex-shrink-0" data-day="2">Day 2</button>
+<button class="day-tab px-8 py-4 bg-surface-container-high text-on-surface-variant rounded-full font-bold hover:bg-surface-container-highest transition-all flex-shrink-0" data-day="3">Day 3</button>
+<button class="day-tab px-8 py-4 bg-surface-container-high text-on-surface-variant rounded-full font-bold hover:bg-surface-container-highest transition-all flex-shrink-0" data-day="4">Day 4</button>
+<button data-action="add-day" class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container text-primary border-2 border-dashed border-primary/30 flex items-center justify-center hover:bg-primary/10 transition-colors" title="Add day">
+  <span class="material-symbols-outlined">add</span>
+</button>
+</div>
+
+<!-- DAY 1 -->
+<div id="day-1" class="day-content">
+<div class="bento-container" id="bento-1"></div>
+<div class="day-empty-state col-span-12 text-center py-16 text-on-surface-variant/50">
+  <span class="material-symbols-outlined text-4xl mb-3 block" translate="no">add_circle</span>
+  <p class="text-sm">Tap <strong>+</strong> to add your first stop for Day 1</p>
+</div>
+</div><!-- /day-1 -->
+
+<!-- DAY 2 -->
+<div id="day-2" class="day-content hidden">
+<div class="bento-container" id="bento-2"></div>
+<div class="day-empty-state col-span-12 text-center py-16 text-on-surface-variant/50">
+  <span class="material-symbols-outlined text-4xl mb-3 block" translate="no">add_circle</span>
+  <p class="text-sm">Tap <strong>+</strong> to add your first stop for Day 2</p>
+</div>
+</div><!-- /day-2 -->
+
+<!-- DAY 3 -->
+<div id="day-3" class="day-content hidden">
+<div class="bento-container" id="bento-3"></div>
+<div class="day-empty-state col-span-12 text-center py-16 text-on-surface-variant/50">
+  <span class="material-symbols-outlined text-4xl mb-3 block" translate="no">add_circle</span>
+  <p class="text-sm">Tap <strong>+</strong> to add your first stop for Day 3</p>
+</div>
+</div><!-- /day-3 -->
+
+<!-- DAY 4 -->
+<div id="day-4" class="day-content hidden">
+<div class="bento-container" id="bento-4"></div>
+<div class="day-empty-state col-span-12 text-center py-16 text-on-surface-variant/50">
+  <span class="material-symbols-outlined text-4xl mb-3 block" translate="no">add_circle</span>
+  <p class="text-sm">Tap <strong>+</strong> to add your first stop for Day 4</p>
+</div>
+</div><!-- /day-4 -->
+
+<!-- Delete day action — only visible when Day 2+ is active -->
+<div id="delete-day-bar" class="hidden mt-10 mb-4 flex justify-center">
+  <button onclick="deleteActiveDay()" class="flex items-center gap-1.5 text-xs text-on-surface-variant/30 hover:text-red-400 transition-colors">
+    <span class="material-symbols-outlined" translate="no" style="font-size:15px">delete_outline</span>
+    <span id="delete-day-text">Remove Day 2</span>
+  </button>
+</div>
+
+</main>
+<!-- FAB: Peach Action Button -->
+<a href="new-entry.html" class="fixed bottom-32 right-8 w-16 h-16 custom-gradient-peach text-white rounded-full shadow-2xl flex items-center justify-center z-50 transition-transform hover:scale-110 active:scale-95 group">
+<span class="material-symbols-outlined text-3xl transition-transform group-hover:rotate-90">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-8">
+<div class="fixed bottom-6 left-6 right-6 rounded-[3rem] overflow-hidden bg-[#F2EDEA]/80 dark:bg-[#2A2826]/80 backdrop-blur-3xl shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-4 py-2">
+<!-- Explore -->
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] dark:hover:bg-[#3E5248] transition-colors rounded-full group" href="explore.html">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Explore</span>
+</a>
+<!-- Journal (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-[#DCAE96] dark:bg-[#7A5642] text-white rounded-full p-3 active:scale-90 duration-200 ease-out" href="trips.html">
+<span class="material-symbols-outlined" data-icon="book" style="font-variation-settings: 'FILL' 1;">book</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Journal</span>
+</a>
+<!-- Saved -->
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] dark:hover:bg-[#3E5248] transition-colors rounded-full group" href="saved.html">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Saved</span>
+</a>
+<!-- Sync -->
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] dark:hover:bg-[#3E5248] transition-colors rounded-full group" href="sync.html">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Sync</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] dark:hover:bg-[#3E5248] transition-colors rounded-full group" href="profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Profile</span>
+</a>
+</div>
+</nav>
+<script src="../assets/js/journal.js"></script>
+</body></html>

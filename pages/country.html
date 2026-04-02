@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - Japan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+<style>
+  .city-card:hover .city-img { transform: scale(1.05); }
+</style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased pb-32">
+
+<!-- Hero -->
+<div class="relative w-full" style="height:320px">
+  <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbaILY535eNwr8Cm29ID6NvZCWGrYBbkji4Alm2GPJ_IF_KdgXlFO5yxXLOGf9l4lyTqJhBT35vQyTaULxdrEUsSxO9NE1yiJC1ZMN9t64BAP-XLefT5uTz2rh685VkvtIvS0EHdg-xei9Ak2RnHwnomZwtar35NhHt7IjIkTvAODMf5KIeWrjeBN4RUTLjIu_HJncCK7nwS8x5TX4tmyZGXKXozDyf9nOW7CYaXR5GH31SdX6_mwhSIEfXbEh3aUWw44IicCLCQ" alt="Japan"/>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30"></div>
+  <!-- Back -->
+  <a href="explore.html" class="absolute top-5 left-5 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center">
+    <span class="material-symbols-outlined text-white">arrow_back</span>
+  </a>
+  <!-- Country info -->
+  <div class="absolute bottom-7 left-6 right-6">
+    <p class="text-white/70 text-xs font-semibold mb-1">🇯🇵 Asia</p>
+    <h1 class="font-headline text-4xl font-extrabold text-white mb-3">Japan</h1>
+    <div class="flex gap-3">
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">5 Cities</span>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">124 Spots</span>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">⭐ 4.8</span>
+    </div>
+  </div>
+</div>
+
+<main class="max-w-4xl mx-auto px-5 pt-8">
+
+  <!-- About -->
+  <section class="mb-8">
+    <p class="text-on-surface-variant leading-relaxed">
+      From ancient temples to neon-lit streets, Japan blends centuries of tradition with modern innovation. Discover seasonal landscapes, world-class cuisine, and warm hospitality across five iconic cities.
+    </p>
+  </section>
+
+  <!-- Quick stats -->
+  <div class="grid grid-cols-3 gap-3 mb-10">
+    <div class="rounded-[1.5rem] bg-surface-container p-4 text-center">
+      <p class="font-headline text-2xl font-extrabold text-primary">5</p>
+      <p class="text-on-surface-variant text-xs mt-1">Cities</p>
+    </div>
+    <div class="rounded-[1.5rem] bg-surface-container p-4 text-center">
+      <p class="font-headline text-2xl font-extrabold text-primary">124</p>
+      <p class="text-on-surface-variant text-xs mt-1">Spots</p>
+    </div>
+    <div class="rounded-[1.5rem] bg-surface-container p-4 text-center">
+      <p class="font-headline text-2xl font-extrabold text-primary">4.8</p>
+      <p class="text-on-surface-variant text-xs mt-1">Rating</p>
+    </div>
+  </div>
+
+  <!-- Cities -->
+  <section>
+    <div class="flex items-end justify-between mb-5">
+      <div>
+        <h2 class="font-headline text-xl font-bold">Cities in Japan</h2>
+        <p class="text-on-surface-variant text-sm">Tap a city to explore its spots</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4">
+
+      <!-- Kyoto — featured wide -->
+      <a href="city.html" class="city-card relative rounded-[2rem] overflow-hidden block" style="height:210px">
+        <img class="city-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOFj7yWDXlEhtJxs5P0MFhLPdSiyHb7YVUbWOfYqCuJFWHSwOuVEjFI1Z_FT_N_4JXmpiC2-b22IlZVrVh2qzBqkbYVFnmWOhZoTiCn7dUoNn8_SDDM17JrHqFlkuLQFEa2SYDFmO1Kw-0Vw2ZSK-Jm5djFCH2ILsJqOjFbWVxJqDPqOllSsBGBWlDHnKEMXVBMJ7kl9bQT3N9q7oTqn7a5JHVz5t2IyEoY8mnOGdMpD8pXNHr5PJKkOJ1e6w1bO6H8h9SFQ" alt="Kyoto"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute top-4 right-4">
+          <span class="bg-[#dcae96] text-white text-[10px] font-bold px-3 py-1 rounded-full">Active Trip</span>
+        </div>
+        <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+          <div>
+            <p class="text-white/70 text-xs mb-1">Kansai Region</p>
+            <h3 class="font-headline text-2xl font-extrabold text-white">Kyoto</h3>
+            <div class="flex gap-2 mt-1.5">
+              <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">38 Spots</span>
+              <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">⭐ 4.9</span>
+            </div>
+          </div>
+          <div class="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-base">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Tokyo + Osaka -->
+      <div class="grid grid-cols-2 gap-4">
+        <a href="city.html" class="city-card relative rounded-[2rem] overflow-hidden block" style="height:170px">
+          <img class="city-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkBVCTqV1xWZkCByWQerTuKn7rEtHuB5bXlVjEBT4X5m6dRxCEQimV3SbBrM72YLpQUzEaMGtV7tiBfR8PnfBWh2MJWfRxBV8lmAPKfGcxWMp_r0gMZOXtAKfMumPVWbJi8NB6qg1_1PtL-mzVqMDvEhGIPRm9wy2fNUvBRQpCyOmZEFThlDL-T8vSHv8SrPy1qOfVJDJ7ZnnvH_UlS0TtIcZRqYv5p1cSHlLbpJY4THAF1YL7JC6oYIvvIMH0gXqhAJ2AwBNw" alt="Tokyo"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px]">Kantō Region</p>
+            <h3 class="font-headline text-lg font-extrabold text-white">Tokyo</h3>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">42 Spots</span>
+          </div>
+        </a>
+        <a href="city.html" class="city-card relative rounded-[2rem] overflow-hidden block" style="height:170px">
+          <img class="city-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATuM5hkMFEFf0TBDgwByJ5fIHCjd5EkzZaB1vWHXvk2MFp0E2vCU6JzD7BFgr14_uLRuNRKbk0h-JZPFMRSC6JiA4-FWD2qAkZ4BgUXPRxXqBzrVJXDuP0C9w1ys97AGKAkqR3BKXLZS_AKzHY4gO-FQ3BjSBpFXJk4UZJDkTJCuArtYkEkiAhRaJE7iICO8RqWlnQWGxBsJjgKPHQbY0oJsTCQgU0x5gCqEPwjEcPJRMCBRHM3AkS-0fAY0f6K2wMXMmqfig" alt="Osaka"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px]">Kansai Region</p>
+            <h3 class="font-headline text-lg font-extrabold text-white">Osaka</h3>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">29 Spots</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Nara + Hiroshima -->
+      <div class="grid grid-cols-2 gap-4">
+        <a href="city.html" class="city-card relative rounded-[2rem] overflow-hidden block" style="height:170px">
+          <img class="city-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHB-CdSQGsRaqcqQ9j2l1t3XKidRIVHw7Q7xEMKYCAiZEH3XNZeFwX3EHIPq1d4qSXf5U8RoqGpX5iOWwQd1PbAMbTxvIXxN_JHoBGLy8VotLaAaMBWlXg01fjd_JdBGZiEedMSxsYJJyWGi2s-GXVTCiVGrYkQAoHnXKLaEiPkmHk0Zfr9-oT1Cyd_v6dSrJ0SLLXBGmr0P8j-O0dMYv9h5-j8dKnPaTq0rMXKOlyBsZp96kN6BTqKRnLEuPHCLSU3q7x1fg" alt="Nara"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px]">Kansai Region</p>
+            <h3 class="font-headline text-lg font-extrabold text-white">Nara</h3>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">8 Spots</span>
+          </div>
+        </a>
+        <a href="city.html" class="city-card relative rounded-[2rem] overflow-hidden block" style="height:170px">
+          <img class="city-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOFj7yWDXlEhtJxs5P0MFhLPdSiyHb7YVUbWOfYqCuJFWHSwOuVEjFI1Z_FT_N_4JXmpiC2-b22IlZVrVh2qzBqkbYVFnmWOhZoTiCn7dUoNn8_SDDM17JrHqFlkuLQFEa2SYDFmO1Kw-0Vw2ZSK-Jm5djFCH2ILsJqOjFbWVxJqDPqOllSsBGBWlDHnKEMXVBMJ7kl9bQT3N9q7oTqn7a5JHVz5t2IyEoY8mnOGdMpD8pXNHr5PJKkOJ1e6w1bO6H8h9SFQ" alt="Hiroshima"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px]">Chūgoku Region</p>
+            <h3 class="font-headline text-lg font-extrabold text-white">Hiroshima</h3>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">7 Spots</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-6 md:hidden">
+  <div class="bg-[#F2EDEA]/85 backdrop-blur-3xl rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-2 py-2">
+    <a href="explore.html" class="flex flex-col items-center justify-center bg-[#DCAE96] text-white rounded-full p-3 gap-0.5">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">travel_explore</span>
+      <span class="text-[11px] font-semibold font-body">Explore</span>
+    </a>
+    <a href="journal.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">book</span>
+      <span class="text-[11px] font-semibold font-body">Journal</span>
+    </a>
+    <a href="saved.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">favorite</span>
+      <span class="text-[11px] font-semibold font-body">Saved</span>
+    </a>
+    <a href="sync.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">sync</span>
+      <span class="text-[11px] font-semibold font-body">Sync</span>
+    </a>
+    <a href="profile.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">person</span>
+      <span class="text-[11px] font-semibold font-body">Profile</span>
+    </a>
+  </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - Log In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen flex flex-col">
+<!-- Header / Brand Anchor (Suppressed Nav) -->
+<header class="w-full top-0 flex items-center justify-center px-8 py-12">
+<a class="font-headline font-extrabold tracking-[0.2em] text-2xl text-primary" href="onboarding.html">WANDERLUST</a>
+</header>
+<main class="flex-grow flex items-center justify-center px-6 pb-20">
+<div class="w-full max-w-6xl grid-cols-1 items-center flex justify-center">
+<!-- Left Side: Editorial Imagery (Bento Inspired) -->
+<!-- Right Side: Login Form -->
+<div class="flex flex-col gap-10 max-w-md mx-auto w-full">
+<div class="space-y-3">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-surface">Welcome back.</h2>
+<p class="text-on-surface-variant/80 font-medium leading-relaxed">Continue your curated journey through the world's most hidden escapes.</p>
+</div>
+<form action="explore.html" class="flex flex-col gap-6">
+<div class="space-y-2">
+<label class="px-4 text-xs font-bold tracking-widest uppercase text-on-surface-variant/60" for="email">Email Address</label>
+<input class="w-full px-6 py-4 rounded-full bg-surface-container border-none focus:bg-surface-container-lowest focus:ring-0 transition-all placeholder:text-on-surface-variant/30 text-on-surface" id="email" placeholder="curator@wanderlust.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="px-4 text-xs font-bold tracking-widest uppercase text-on-surface-variant/60" for="password">Password</label>
+<input class="w-full px-6 py-4 rounded-full bg-surface-container border-none focus:bg-surface-container-lowest focus:ring-0 transition-all placeholder:text-on-surface-variant/30 text-on-surface" id="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex items-center justify-between px-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded-md border-none bg-surface-container text-primary focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-on-primary text-sm pointer-events-none left-1/2 -translate-x-1/2" style="font-size: 16px;">check</span>
+</div>
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Remember me</span>
+</label>
+<a class="text-sm font-semibold text-primary hover:opacity-70 transition-opacity" href="forgot-password.html">Forgot Password?</a>
+</div>
+<button class="peach-gradient w-full py-5 rounded-full text-white font-headline font-bold tracking-wide shadow-lg hover:opacity-90 transition-all active:scale-[0.98]" type="submit">
+                        Log In
+                    </button>
+</form>
+<div class="text-sm text-on-surface-variant/70 -mt-1 px-4">
+                        Demo flow leads into the active Kyoto and Tokyo trip workspace.
+                    </div>
+<div class="flex flex-col items-center gap-6">
+<div class="flex items-center gap-4 w-full">
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+<span class="text-xs font-bold tracking-widest text-on-surface-variant/40 uppercase">Or continue with</span>
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+</div>
+<div class="flex gap-4 w-full">
+<button class="flex-1 py-4 px-6 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-3">
+<img alt="Google Logo" class="w-5 h-5 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDys2dO_o7-TaAaf6LgIuPb3M67glwRvXutHddFTjXjuVOaledkgGApXWfxkE76kdyNmpTXBTk8it_rXUsTGeHDl5NvcVEp3U_MWmlyVRU6JVUaoIRu30FaRT0MaUJNvSsDW8QSb7chkTuIoruF27KmN7vDrBMpzLa8mYUpjuGZEeuA8msnHj67bqy_U0F-W_oqKSzn0Ka9wBkjYCiILximBz1N6pf6dsJf16Vnki2Mnav8g-nX4NLf1H38lFo1jHZ17rmObFDBwA"/>
+<span class="text-sm font-bold text-on-surface-variant">Google</span>
+</button>
+</div>
+<p class="text-sm text-on-surface-variant/70">
+                        Don't have an account?
+                        <a class="text-primary font-bold ml-1 hover:underline underline-offset-4 decoration-primary/30" href="signup.html">Sign Up</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Anchor -->
+<footer class="w-full py-12 flex flex-col items-center gap-4 bg-transparent">
+<div class="flex gap-8">
+<a class="font-body text-sm text-[#34322F]/50 hover:text-[#7A5642] transition-colors" href="../index.html">App Map</a>
+<a class="font-body text-sm text-[#34322F]/50 hover:text-[#7A5642] transition-colors" href="signup.html">Create Account</a>
+<a class="font-body text-sm text-[#34322F]/50 hover:text-[#7A5642] transition-colors" href="forgot-password.html">Password Help</a>
+</div>
+<p class="font-body text-sm text-[#7A5642] opacity-60">© 2026 Wanderlust Curator Flow</p>
+</footer>
+</body></html>

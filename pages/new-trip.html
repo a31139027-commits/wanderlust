@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - New Trip</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined' !important; }
+  input:focus { outline: none; }
+</style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased pb-36">
+
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#FDF8F5]/95 backdrop-blur-xl">
+  <div class="flex items-center justify-between px-6 py-4 max-w-3xl mx-auto">
+    <a href="trips.html" class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container text-primary hover:bg-surface-container-high transition-colors">
+      <span class="material-symbols-outlined" translate="no">arrow_back</span>
+    </a>
+    <span class="font-headline font-extrabold tracking-[0.2em] text-lg text-primary" translate="no">WANDERLUST</span>
+    <div class="w-10"></div>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-6 pt-8">
+
+  <div class="mb-10">
+    <h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Plan a New Trip</h2>
+    <p class="text-on-surface-variant">Name your adventure and pick a destination.</p>
+  </div>
+
+  <!-- Trip name -->
+  <div class="mb-8">
+    <label class="block text-xs font-bold tracking-widest uppercase text-on-surface-variant/60 ml-1 mb-3">Trip Name</label>
+    <input
+      id="trip-name"
+      type="text"
+      placeholder="e.g. Autumn Japan Trip"
+      maxlength="60"
+      class="w-full h-14 px-6 rounded-full bg-surface-container border-none text-on-surface placeholder:text-on-surface-variant/30 text-base font-medium focus:bg-surface-container-lowest transition-all"
+    />
+  </div>
+
+  <!-- Country selector -->
+  <div class="mb-10">
+    <label class="block text-xs font-bold tracking-widest uppercase text-on-surface-variant/60 ml-1 mb-3">Destination</label>
+    <div id="country-grid" class="grid grid-cols-4 sm:grid-cols-5 gap-3"></div>
+  </div>
+
+  <!-- Create button -->
+  <button
+    id="create-btn"
+    type="button"
+    onclick="createTrip()"
+    disabled
+    class="peach-gradient w-full py-5 rounded-full text-white font-headline font-bold text-lg shadow-lg hover:opacity-90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed">
+    <span class="material-symbols-outlined" translate="no">flight_takeoff</span>
+    Create Trip
+  </button>
+
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-6 pt-2">
+  <div class="bg-[#F2EDEA]/85 backdrop-blur-3xl rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-2 py-2">
+    <a href="explore.html" class="nav-item"><span class="material-symbols-outlined" translate="no">travel_explore</span><span>Explore</span></a>
+    <a href="trips.html" class="nav-item active"><span class="material-symbols-outlined" translate="no" style="font-variation-settings:'FILL' 1;">book</span><span>Journal</span></a>
+    <a href="saved.html" class="nav-item"><span class="material-symbols-outlined" translate="no">favorite</span><span>Saved</span></a>
+    <a href="sync.html" class="nav-item"><span class="material-symbols-outlined" translate="no">sync</span><span>Sync</span></a>
+    <a href="profile.html" class="nav-item"><span class="material-symbols-outlined" translate="no">person</span><span>Profile</span></a>
+  </div>
+</nav>
+
+<script src="../assets/js/new-trip.js"></script>
+</body>
+</html>

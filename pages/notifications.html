@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen pb-36">
+
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#FDF8F5]/90 backdrop-blur-xl">
+  <div class="flex items-center justify-between px-6 py-4 max-w-3xl mx-auto">
+    <a href="explore.html" class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container text-primary hover:bg-surface-container-high transition-colors">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </a>
+    <a href="../index.html" class="font-headline font-extrabold tracking-[0.2em] text-lg text-primary">WANDERLUST</a>
+    <div class="w-10"></div>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-6 pt-8">
+
+  <!-- Page header -->
+  <div class="flex items-end justify-between mb-10">
+    <div>
+      <h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-1">Notifications</h2>
+      <p class="text-on-surface-variant font-medium">Updates from your Autumn Japan Trip</p>
+    </div>
+    <button class="text-sm font-semibold text-primary hover:opacity-70 transition-opacity">Mark all read</button>
+  </div>
+
+  <!-- TODAY -->
+  <section class="mb-10">
+    <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant/50 mb-5 ml-2">Today</p>
+    <div class="space-y-4">
+
+      <!-- Unread: Sync complete -->
+      <div class="flex items-start gap-4 bg-surface-container-lowest rounded-[2rem] p-6 cloud-shadow relative">
+        <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings:'FILL' 1;">sync</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-headline font-bold text-on-surface mb-0.5">Sync Complete</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Your Autumn Japan pack is ready for offline use.</p>
+          <p class="text-xs text-on-surface-variant/50 font-semibold mt-2">2 min ago</p>
+        </div>
+        <div class="w-2.5 h-2.5 bg-primary rounded-full mt-1 flex-shrink-0"></div>
+      </div>
+
+      <!-- Unread: Collaborator note -->
+      <div class="flex items-start gap-4 bg-surface-container-lowest rounded-[2rem] p-6 cloud-shadow relative">
+        <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings:'FILL' 1;">rate_review</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-headline font-bold text-on-surface mb-0.5">Marcus added a note</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">"Hidden crystal cave near the 2,400m marker. Perfect lunch spot away from the wind."</p>
+          <a href="place-details.html" class="text-xs text-primary font-bold mt-2 inline-flex items-center gap-1 hover:underline">
+            View details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <p class="text-xs text-on-surface-variant/50 font-semibold mt-1">1 hour ago</p>
+        </div>
+        <div class="w-2.5 h-2.5 bg-primary rounded-full mt-1 flex-shrink-0"></div>
+      </div>
+
+      <!-- Unread: Saved place -->
+      <div class="flex items-start gap-4 bg-surface-container-lowest rounded-[2rem] p-6 cloud-shadow relative">
+        <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings:'FILL' 1;">favorite</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-headline font-bold text-on-surface mb-0.5">Sofia saved Fushimi Inari Path</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">A new place was added to your shared keepsakes collection.</p>
+          <a href="saved.html" class="text-xs text-primary font-bold mt-2 inline-flex items-center gap-1 hover:underline">
+            See collection <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <p class="text-xs text-on-surface-variant/50 font-semibold mt-1">3 hours ago</p>
+        </div>
+        <div class="w-2.5 h-2.5 bg-primary rounded-full mt-1 flex-shrink-0"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EARLIER -->
+  <section>
+    <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant/50 mb-5 ml-2">Earlier</p>
+    <div class="space-y-4">
+
+      <!-- Read: Julian joined -->
+      <div class="flex items-start gap-4 bg-surface-container rounded-[2rem] p-6 relative opacity-70">
+        <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-on-surface-variant">person_add</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-headline font-bold text-on-surface mb-0.5">Julian joined the expedition</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Lead Navigator is now active in your crew.</p>
+          <p class="text-xs text-on-surface-variant/50 font-semibold mt-2">Yesterday</p>
+        </div>
+      </div>
+
+      <!-- Read: Day 2 updated -->
+      <div class="flex items-start gap-4 bg-surface-container rounded-[2rem] p-6 relative opacity-70">
+        <div class="w-12 h-12 rounded-full bg-primary-container/50 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-primary">book</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-headline font-bold text-on-surface mb-0.5">Day 2 itinerary updated</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">3 new stops were added to your Tokyo evening.</p>
+          <a href="journal.html" class="text-xs text-primary font-bold mt-2 inline-flex items-center gap-1 hover:underline">
+            Open journal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <p class="text-xs text-on-surface-variant/50 font-semibold mt-1">2 days ago</p>
+        </div>
+      </div>
+
+      <!-- Read: Recommendation -->
+      <div class="flex items-start gap-4 bg-surface-container rounded-[2rem] p-6 relative opacity-70">
+        <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-secondary">travel_explore</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-headline font-bold text-on-surface mb-0.5">New recommendation</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Based on Kyoto, you might also love Nara Park's deer sanctuary.</p>
+          <a href="explore.html" class="text-xs text-primary font-bold mt-2 inline-flex items-center gap-1 hover:underline">
+            Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <p class="text-xs text-on-surface-variant/50 font-semibold mt-1">3 days ago</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-6 pt-2">
+  <div class="bg-[#F2EDEA]/85 backdrop-blur-3xl rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-2 py-2">
+    <a href="explore.html" class="nav-item active">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">travel_explore</span>
+      <span>Explore</span>
+    </a>
+    <a href="journal.html" class="nav-item">
+      <span class="material-symbols-outlined">book</span>
+      <span>Journal</span>
+    </a>
+    <a href="saved.html" class="nav-item">
+      <span class="material-symbols-outlined">favorite</span>
+      <span>Saved</span>
+    </a>
+    <a href="sync.html" class="nav-item">
+      <span class="material-symbols-outlined">sync</span>
+      <span>Sync</span>
+    </a>
+    <a href="profile.html" class="nav-item">
+      <span class="material-symbols-outlined">person</span>
+      <span>Profile</span>
+    </a>
+  </div>
+</nav>
+
+</body>
+</html>

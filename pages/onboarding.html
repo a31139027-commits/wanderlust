@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+
+<!-- Header -->
+<header class="w-full flex items-center justify-between px-8 pt-10 pb-4">
+  <div></div>
+  <h1 class="font-headline font-extrabold tracking-[0.22em] text-xl text-primary">WANDERLUST</h1>
+  <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="login.html">Log in</a>
+</header>
+
+<main class="flex-grow flex flex-col items-center px-6 pt-6 pb-12 max-w-lg mx-auto w-full">
+
+  <!-- Hero quote -->
+  <div class="w-full rounded-xl overflow-hidden relative mb-10" style="aspect-ratio:4/3">
+    <img
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbaILY535eNwr8Cm29ID6NvZCWGrYBbkji4Alm2GPJ_IF_KdgXlFO5yxXLOGf9l4lyTqJhBT35vQyTaULxdrEUsSxO9NE1yiJC1ZMN9t64BAP-XLefT5uTz2rh685VkvtIvS0EHdg-xei9Ak2RnHwnomZwtar35NhHt7IjIkTvAODMf5KIeWrjeBN4RUTLjIu_HJncCK7nwS8x5TX4tmyZGXKXozDyf9nOW7CYaXR5GH31SdX6_mwhSIEfXbEh3aUWw44IicCLCQ"
+      alt="Kyoto cherry blossoms"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/70 via-on-surface/20 to-transparent"></div>
+    <div class="absolute bottom-8 left-8 right-8">
+      <p class="font-headline text-white/60 text-xs tracking-widest uppercase mb-2">A traveler's philosophy</p>
+      <h2 class="font-headline text-white text-3xl font-extrabold leading-tight tracking-tight">
+        "Not all those who wander are lost."
+      </h2>
+    </div>
+  </div>
+
+  <!-- Feature cards -->
+  <div class="w-full space-y-4 mb-10">
+
+    <div class="flex items-start gap-5 bg-surface-container-lowest rounded-[2rem] p-6 cloud-shadow">
+      <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings:'FILL' 1;">travel_explore</span>
+      </div>
+      <div>
+        <h3 class="font-headline font-bold text-on-surface text-lg mb-1">Curate Your Journey</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Handpick destinations matched to your travel style and build a collection worth keeping.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-5 bg-surface-container-lowest rounded-[2rem] p-6 cloud-shadow">
+      <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings:'FILL' 1;">book</span>
+      </div>
+      <div>
+        <h3 class="font-headline font-bold text-on-surface text-lg mb-1">Build Your Itinerary</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Turn saved places into day-by-day expedition logs you and your crew can edit together.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-5 bg-surface-container-lowest rounded-[2rem] p-6 cloud-shadow">
+      <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings:'FILL' 1;">sync</span>
+      </div>
+      <div>
+        <h3 class="font-headline font-bold text-on-surface text-lg mb-1">Travel Together</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Share routes, notes, and offline maps with your expedition crew — even without a signal.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA buttons -->
+  <div class="w-full space-y-4">
+    <a
+      href="signup.html"
+      class="peach-gradient w-full py-5 rounded-full text-white font-headline font-bold text-lg tracking-wide shadow-lg hover:opacity-90 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+    >
+      Start Exploring
+      <span class="material-symbols-outlined">north_east</span>
+    </a>
+    <p class="text-center text-sm text-on-surface-variant">
+      Already have an account?
+      <a href="login.html" class="text-primary font-bold ml-1 hover:underline underline-offset-4">Log In</a>
+    </p>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-8 flex justify-center gap-8">
+  <a class="text-sm text-on-surface-variant/50 hover:text-primary transition-colors" href="../index.html">App Map</a>
+  <a class="text-sm text-on-surface-variant/50 hover:text-primary transition-colors" href="login.html">Log In</a>
+  <a class="text-sm text-on-surface-variant/50 hover:text-primary transition-colors" href="signup.html">Sign Up</a>
+</footer>
+
+</body>
+</html>

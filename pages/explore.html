@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust - Explore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../assets/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../assets/shared.css" rel="stylesheet"/>
+<style>
+  #search-input:focus { outline: none; }
+  .country-card:hover .country-img { transform: scale(1.06); }
+</style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased pb-32">
+
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#FDF8F5]/95 backdrop-blur-xl flex items-center justify-between px-6 py-4">
+  <div class="flex items-center gap-3">
+    <span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+    <a class="text-2xl font-extrabold text-primary font-headline tracking-tight" href="../index.html">Wanderlust</a>
+  </div>
+  <div class="hidden md:flex gap-6 items-center text-sm font-semibold">
+    <a class="text-primary" href="explore.html">Explore</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors" href="trips.html">Journal</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors" href="saved.html">Saved</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors" href="sync.html">Sync</a>
+    <a href="notifications.html" class="text-on-surface-variant hover:text-primary transition-colors">
+      <span class="material-symbols-outlined">notifications</span>
+    </a>
+    <a href="profile.html" class="w-9 h-9 rounded-full bg-surface-container-highest overflow-hidden block">
+      <img alt="Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtVPxw6P0yTitV_RRs2rBt6naTyx4COAFnhF9Tq-aHRgQjf0IlsH-ybx3baBp0GIM9uwRnEaJFuD9mPYGhHdtWh1518NlVYXVipqdFfGnap7oJktdqu1IRIq_QzwVb182MBszA0HkPGLjK8HhOaMXOfw5Kt3fHlTbgsp-cH7lLR-rrXdCy8XQ1nKjmOwx82Bg2leDuljuhaVqhTs0WD_sRsuUI2MFKm0Tgq8QwcWIZamqRY4I0gu8jFDGlYLFw9NForEdsukxs4w" class="w-full h-full object-cover"/>
+    </a>
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto px-5 pt-8">
+
+  <!-- Hero & Search -->
+  <section class="mb-10">
+    <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-2 text-on-surface leading-tight">
+      Where will you<br/><span style="background:linear-gradient(45deg,#7a5642,#dcae96);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">wander next?</span>
+    </h2>
+    <p class="text-on-surface-variant mb-6">Choose a country to discover cities and places.</p>
+    <div class="relative">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search countries, cities, places…"
+        class="w-full h-14 pl-13 pr-5 rounded-full bg-surface-container border-none text-on-surface placeholder:text-on-surface-variant/40 transition-all focus:bg-surface-container-lowest"
+        oninput="filterCountries(this.value)"
+      />
+      <span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface-variant">travel_explore</span>
+    </div>
+  </section>
+
+  <!-- Active Trip Banner (dynamic) -->
+  <div id="trip-banner-area" class="mb-10">
+    <div id="trip-banner-loading" class="hidden"></div>
+  </div>
+
+  <!-- Country Grid -->
+  <section>
+    <div class="flex justify-between items-end mb-5">
+      <div>
+        <h3 class="font-headline text-xl font-bold text-on-surface">Explore by Country</h3>
+        <p class="text-on-surface-variant text-sm">Tap a country to browse its cities</p>
+      </div>
+      <span id="result-count" class="text-xs font-semibold text-on-surface-variant/60">6 countries</span>
+    </div>
+
+    <div id="country-grid" class="grid grid-cols-1 gap-5">
+
+      <!-- Japan -->
+      <a href="country.html" data-name="japan" class="country-card relative rounded-[2rem] overflow-hidden block" style="height:220px">
+        <img class="country-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbaILY535eNwr8Cm29ID6NvZCWGrYBbkji4Alm2GPJ_IF_KdgXlFO5yxXLOGf9l4lyTqJhBT35vQyTaULxdrEUsSxO9NE1yiJC1ZMN9t64BAP-XLefT5uTz2rh685VkvtIvS0EHdg-xei9Ak2RnHwnomZwtar35NhHt7IjIkTvAODMf5KIeWrjeBN4RUTLjIu_HJncCK7nwS8x5TX4tmyZGXKXozDyf9nOW7CYaXR5GH31SdX6_mwhSIEfXbEh3aUWw44IicCLCQ" alt="Japan"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+          <div>
+            <p class="text-white/70 text-xs font-semibold mb-1">🇯🇵 Asia</p>
+            <h4 class="font-headline text-3xl font-extrabold text-white">Japan</h4>
+            <div class="flex gap-3 mt-2">
+              <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">5 Cities</span>
+              <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">124 Spots</span>
+            </div>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-white">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Two column row -->
+      <div class="grid grid-cols-2 gap-5">
+
+        <!-- Iceland -->
+        <a href="country.html" data-name="iceland" class="country-card relative rounded-[2rem] overflow-hidden block" style="height:180px">
+          <img class="country-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSyVPaRxfHdi_u8KbpXk2BfGu_rWriu94yAX7MnlOQNDFwOWFgk8w75b4tvH5E3VV4I0Td231e99VFvA_panA7xY0Xo7lHtghByjHebvbVKSCqA27nF2RZdkX3eQMjiZ9plcQs4uOit1mUodq7ot65sBoXvXObJA1cKubmi-R5sQZ41X3XIrjmkq0XeS3NddZ0RKY5TRNP3kyOel7cnYiNkTuBpigQLppJ-8Uokv5DKoodMh9LnYGlMma1Cy8cF0sOjkNghAQXsw" alt="Iceland"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px] font-semibold">🇮🇸 Europe</p>
+            <h4 class="font-headline text-xl font-extrabold text-white">Iceland</h4>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">3 Cities · 45 Spots</span>
+          </div>
+        </a>
+
+        <!-- Italy -->
+        <a href="country.html" data-name="italy" class="country-card relative rounded-[2rem] overflow-hidden block" style="height:180px">
+          <img class="country-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3UsPnUX-Uig6obea9sWa8W-hj5YoeFW-l93omRp9q4wuEKJ8YenqSlZ_asY9LdbH2CwA9_jfJthAGJ2J7VDUJSDpCHVrDbw_npUFwLSHJMaIYpDTzb9ovZDGCCXojLJMcbbapWl9cuRCFRvnXcDl0s-q4yXw4QPuNFSJQlqdypEc4LbAfw1RESjSsFeFgmy2BxoymuFVg29iiQ0wqwJOzhvtZDwL5mUORrWxaN_gW0W1MXItdcIgDi_5_1N6rtjUvLakWZPsCQmQ" alt="Italy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px] font-semibold">🇮🇹 Europe</p>
+            <h4 class="font-headline text-xl font-extrabold text-white">Italy</h4>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">12 Cities · 203 Spots</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Two column row -->
+      <div class="grid grid-cols-2 gap-5">
+
+        <!-- India -->
+        <a href="country.html" data-name="india" class="country-card relative rounded-[2rem] overflow-hidden block" style="height:180px">
+          <img class="country-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbKIMiWDcJYt-OWAjiVGHggNkedArua1w2SEq-f4TZvNEFmM6uQ8A61DosuJg3pG0T1opP_sXTZeAbs6hqY2cvlzsegW4fQE0aDE9LhPf3B3KPdwUvt7-mhw0sOcL4BDFZOVS60yza3pmJBsGAl-Bn_KMssWzBe_I4QHMAoyZ3uITGGqWpura4Uu5ofJfoKe4cv74wCL5PVo8GH27O_0M3X9j089lWjJwMgIl1uEnJgDRYqNOVRrYCguXNKb73LbjSEcmGAN4eyw" alt="India"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px] font-semibold">🇮🇳 Asia</p>
+            <h4 class="font-headline text-xl font-extrabold text-white">India</h4>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">15 Cities · 312 Spots</span>
+          </div>
+        </a>
+
+        <!-- Mexico -->
+        <a href="country.html" data-name="mexico" class="country-card relative rounded-[2rem] overflow-hidden block" style="height:180px">
+          <img class="country-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7PzG_7qt01ZIsvMpJMUzTBMt4mMfRIKWsy1fCVZTssMhwCzH1QlZtszJ800E8a4rHCz4Fnrqn43Qtx1w3ZJzhi7e4imR8dble40tMz6SJjyxERgekayKOR_TFFQk7g3eRm8vUvKK2V-f0dRPNv-AAPJOlFFW6icoX9_35Gex9-uKA8KCFFBh2wH8Fw5bMvrLSpRb8qKrQI0iu9Ho42zaGlDLAtfbUBkwdFRrM4dAmwKE7EuYPyPhGA0DHTBRZ_LYvzFG1HadKfA" alt="Mexico"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white/70 text-[10px] font-semibold">🇲🇽 Americas</p>
+            <h4 class="font-headline text-xl font-extrabold text-white">Mexico</h4>
+            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">9 Cities · 156 Spots</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Morocco -->
+      <a href="country.html" data-name="morocco" class="country-card relative rounded-[2rem] overflow-hidden block" style="height:180px">
+        <img class="country-img w-full h-full object-cover transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADznerA57zBClu942RK0uQRW6KOpoyQD7gmPfm05gOgnJbBAcUgfxzYmMwboIpfefe3unIvGOoqxdjZ0Jp-Go8hqtiG2OrfvytDkyPq6pcLXGVY02yhgkEWxSpAfUtDqL4VPR-yOxnvPCGKs-RfQmhBAX-DS6Jj6Y9-gvXHOBmaeaoUl4aOVG3vGAePR1HfNvOogCgHsiYh9QnsIRVy-DxvAkVldp6TNjmBfXCX7_yuz_vngtvQ7X0Ofnb9RzgSQVy4WFTl4Of3A" alt="Morocco"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-6 right-6 flex items-end justify-between">
+          <div>
+            <p class="text-white/70 text-xs font-semibold">🇲🇦 Africa</p>
+            <h4 class="font-headline text-2xl font-extrabold text-white">Morocco</h4>
+            <span class="bg-white/20 text-white text-xs font-bold px-3 py-0.5 rounded-full">6 Cities · 87 Spots</span>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-white">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /country-grid -->
+
+    <p id="no-results" class="hidden text-center text-on-surface-variant py-12">No countries match your search.</p>
+  </section>
+
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-6 md:hidden">
+  <div class="bg-[#F2EDEA]/85 backdrop-blur-3xl rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-2 py-2">
+    <a href="explore.html" class="flex flex-col items-center justify-center bg-[#DCAE96] text-white rounded-full p-3 gap-0.5">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">travel_explore</span>
+      <span class="text-[11px] font-semibold font-body">Explore</span>
+    </a>
+    <a href="journal.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">book</span>
+      <span class="text-[11px] font-semibold font-body">Journal</span>
+    </a>
+    <a href="saved.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">favorite</span>
+      <span class="text-[11px] font-semibold font-body">Saved</span>
+    </a>
+    <a href="sync.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">sync</span>
+      <span class="text-[11px] font-semibold font-body">Sync</span>
+    </a>
+    <a href="profile.html" class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full hover:bg-[#C9E6D7] transition-colors gap-0.5">
+      <span class="material-symbols-outlined">person</span>
+      <span class="text-[11px] font-semibold font-body">Profile</span>
+    </a>
+  </div>
+</nav>
+
+<script src="../assets/js/explore.js"></script>
+</body>
+</html>

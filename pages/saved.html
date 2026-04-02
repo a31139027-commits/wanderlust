@@ -1,107 +1,65 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="light" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Wanderlust - My Keepsakes</title>
+<title>Wanderlust - Saved</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="../assets/tailwind.config.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="../assets/shared.css" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined' !important; }
+</style>
 </head>
-<body class="bg-surface text-on-surface font-body">
-<header class="sticky top-0 z-40 bg-[#f2edea]/90 backdrop-blur-3xl px-6 py-4 flex items-center justify-between">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">menu</span>
-<a class="text-2xl font-extrabold text-primary font-headline tracking-tight" href="../index.html">Wanderlust</a>
-</div>
-<div class="flex items-center gap-4">
-<a class="text-sm font-semibold text-on-surface-variant hover:text-primary" href="explore.html">Explore</a>
-<a class="text-sm font-semibold text-on-surface-variant hover:text-primary" href="trips.html">Journal</a>
-<a class="text-sm font-semibold text-primary" href="saved.html">Saved</a>
-<a class="text-sm font-semibold text-on-surface-variant hover:text-primary" href="sync.html">Sync</a>
-<a class="text-sm font-semibold text-on-surface-variant hover:text-primary" href="profile.html">Profile</a>
-</div>
+<body class="bg-background font-body text-on-surface antialiased pb-36">
+
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#FDF8F5]/95 backdrop-blur-xl">
+  <div class="flex items-center justify-between px-6 py-4 max-w-3xl mx-auto">
+    <a href="explore.html" class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container text-primary hover:bg-surface-container-high transition-colors">
+      <span class="material-symbols-outlined" translate="no">arrow_back</span>
+    </a>
+    <span class="font-headline font-extrabold tracking-[0.2em] text-lg text-primary" translate="no">WANDERLUST</span>
+    <div class="w-10"></div>
+  </div>
 </header>
-<main class="max-w-7xl mx-auto px-6 py-8 pb-32">
-<section class="mb-10">
-<h1 class="font-headline text-5xl font-extrabold tracking-tight mb-3">My Keepsakes</h1>
-<p class="text-on-surface-variant text-lg">Collections connected to your active Kyoto and Tokyo itinerary.</p>
-</section>
-<section class="grid grid-cols-1 md:grid-cols-12 gap-8">
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 md:p-10">
-<div class="flex items-start justify-between mb-8">
-<div>
-<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-4">3 Places</span>
-<a class="block text-3xl font-headline font-bold" href="place-details.html">Saved in Japan</a>
-</div>
-<a class="w-12 h-12 rounded-full bg-primary-container/30 text-primary flex items-center justify-center" href="place-details.html">
-<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">favorite</span>
-</a>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-<a class="aspect-[4/5] rounded-lg overflow-hidden relative group" href="place-details.html">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQjvRKnwqOVmctDOnq4xj42IZ0qQV5BOaGfwJfXwcLVjlcX6lKQFaFcjTIiv2Ec7l2-UYhQibWy0lrZ3BRneP38xxPjcXdXaXOJRgJ1OrMavE5f0GCcGzPPG3LWjkfMPqvuUYBzusUF5Sdl64M_KHbFdI2rrjKlED4kbKoSOUgiO_97er6MY6zqAFpw88NQZhBvWyfdA3-Rv9bN63FiXVSbQEZSl0-hoDj94MCJLpgllMQmla6U-PvQ28xGWE0z0a_MbaCbzU_Eg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4"><p class="text-white font-bold">Tokyo Metropolis</p></div>
-</a>
-<a class="aspect-[4/5] rounded-lg overflow-hidden relative group" href="place-details.html">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcDK09Hfk8_2riIWZU4cIi8znhfbH4SvNd5dbcX44Xs4ltp7yV2SxhPtGK2uOHiIl9zpNprHhYhLFb76d9Z2XDWwpOoiDC15YcWo4MLKhQZTI5EYXX_-t_oVPKySOr4jl7KT--GI8zlxLS6mVIRqs3aYhHWpflcAXpu_poKsfK4he6RlSxg7-iH1OQDw83ZBUy8Uw5NuET63J4Yya0n_w_b-QXYYcznds-9OcIZJEGaU-9lr_sYJ5Om3Q6njWcnAWKqBXx6IhO5g"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4"><p class="text-white font-bold">Kyoto Temples</p></div>
-</a>
-<a class="aspect-[4/5] rounded-lg overflow-hidden relative group" href="place-details.html">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Vo87BSGyVxIkkj3R4n9EbqOHsj8tbEFclVQ6Za0z9HvPnncjygF6LKBXzNs6H2D33SO6i7Fns3QnSFRgXEKhxDW75SY1FOAAj1JjBzgZd9wBxMsBUJYy5EB8CZzs2qbHjKY2z78CK890WQd-ezxNbi8rcu1-G9vOrvxLRYuJuuAfbQ9I8nij-2fAhvDKl4a9CTiznJhdBKDmYrH3aKEX3VUbywJCBfaDYGBeZMzYu6lV53p8_3ZHPQIOrw86UeSUZcd7_cisMQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4"><p class="text-white font-bold">Fushimi Inari Path</p></div>
-</a>
-</div>
-</div>
-<a class="md:col-span-4 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-between" href="place-details.html">
-<div>
-<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-4">1 Place</span>
-<h2 class="text-3xl font-headline font-bold mb-6">Saved in Iceland</h2>
-<div class="aspect-square rounded-lg overflow-hidden relative mb-6">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpXBP38ve92GcADkC29I2MJbZHVR3jmzqF6EK_H4gxEWNouqyWbk3nc0kxgYLYChEudw-_vLpDplhmstXvfMvY-0MGJKLv_7UCIdd3dBaDXo7qVVWdqIVll3ue5LAJAGdr1uL_m0t33GG38R68j_RFypRUWr2FUnQtnxx_-D4gNuXjQJxIMaySOzPqUWLRn_s9BhA6rwq2IZY6tSCO9VVfNLqEugHl-GyWUTM_gaSNd66jSunet6DaZNprLnVDyq7Ywxh0yWGWIw"/>
-</div>
-<p class="text-on-surface-variant text-lg">A cold-weather alternate saved alongside your Japan trip.</p>
-</div>
-<span class="text-primary font-bold">Open details</span>
-</a>
-<div class="md:col-span-4 bg-surface-container rounded-xl p-8">
-<div class="flex justify-between items-center mb-8">
-<h2 class="text-2xl font-headline font-bold">Morocco</h2>
-<span class="material-symbols-outlined text-primary">arrow_forward</span>
-</div>
-<div class="flex -space-x-4 mb-6">
-<div class="w-16 h-16 rounded-full border-4 border-surface-container-lowest overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADznerA57zBClu942RK0uQRW6KOpoyQD7gmPfm05gOgnJbBAcUgfxzYmMwboIpfefe3unIvGOoqxdjZ0Jp-Go8hqtiG2OrfvytDkyPq6pcLXGVY02yhgkEWxSpAfUtDqL4VPR-yOxnvPCGKs-RfQmhBAX-DS6Jj6Y9-gvXHOBmaeaoUl4aOVG3vGAePR1HfNvOogCgHsiYh9QnsIRVy-DxvAkVldp6TNjmBfXCX7_yuz_vngtvQ7X0Ofnb9RzgSQVy4WFTl4Of3A"/></div>
-<div class="w-16 h-16 rounded-full border-4 border-surface-container-lowest overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPqmqjn4RCnaQD3f7XTSU_upAOvgbQraqVC7M8wU-a2oSNTyXCxf7-X_tEV1QoSOu7Kr0oa7Fiiq0BR_6UDjW089vd34RkDSZHPZxOhWg5m9Girr226-DlpzIyKVchP7ybWTXcupU6SJsnvq8Lk3tRDjMG3wjqZ5XZX4ImGKsCgPngEtB5gS76WYoGLQ7fmXC2ZToSoWTZ93qPONMZQuvHQFfmKNruymvSEiEjT2X4x3RO1PKzRm0O0WVCJ4WiV-sMRvXGvMsDvg"/></div>
-<div class="w-16 h-16 rounded-full border-4 border-surface-container-lowest bg-primary-container flex items-center justify-center text-on-primary-container font-bold">+2</div>
-</div>
-<p class="text-on-surface-variant text-sm font-semibold">Side inspiration board not yet linked into the active trip.</p>
-</div>
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
-<div class="flex-1">
-<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-4">5 Places</span>
-<h2 class="text-3xl font-headline font-bold mb-4">The Italian Summer</h2>
-<p class="text-on-surface-variant mb-8">A future collection kept separate from the current Japan flow.</p>
-<a class="text-primary font-bold inline-flex items-center gap-2" href="explore.html">Back to explore<span class="material-symbols-outlined">chevron_right</span></a>
-</div>
-<div class="flex-1 grid grid-cols-2 gap-3">
-<div class="rounded-lg overflow-hidden h-40"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdkBcKlWgMR9H3NIYVU9NmTENsaZcjjACOueV_bTmLPVM0ZT3oOZ97ifPgMeR_uw9SIGSOiVB7QhR2HKGIuzBoixZWrau43WNZzs36K0gaTVVv10eRwHDp6s9Y8qVj9M5Nccz2fGdrpI-1ApsPkF89MSabkjPhLrEUV8X81w80v7jimijXEcfIGqN7F0LmcdceWTDUoWpMgOdJX5GomvoMAGhbvhS-h_XlwVldE-B_KCwOSGsGDRr0qLAR5GrtJRaJSwFMgPa9Mw"/></div>
-<div class="rounded-lg overflow-hidden h-40"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP5wL5r24y-BPLlv82vJ018Ck3dFmniqimqcuLdyNhUe2TKdIvPVoStne09P-lp8FKNDAOJMSfotfiZTMH2Cxl2RdA6fdkCpYL5k79bs7BiPl0271Tn-92Cm5at7kCVoDKmUlv8VtOgLi3OO0JeW5AMPAK6FDnp4mgnEI4RQ881jiT-EBYCtB0UZu0i3JOK9Y9mEGnFZUyYFheoZbJtBED6O0NyG9kFcUBslloasp4UL2STI6z-fkyzO7KOTn6NZP65KEak8zwzg"/></div>
-<div class="col-span-2 rounded-lg overflow-hidden h-40"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjc7LlZlTEZS4y4ThfYvlYSZhOpw5cS5hJaga-Gt1RG2oWaNI7hYb-z9Ntf1ETTaUIBIzDOw9W9YAVI56KRAvCN3KpIPWmIG7QvGmUZgnPDvbZJQOxYxsQ6s-lNQMCf9ppOVwIyrY875M52oDYPuqIZz2f9RaQXElrcVBEVp7kTQRy8Lj69sr_9PC_Xx-hYBglnyYj5QHYOrcqBWqYwbcIoGosJpNiD0CFxXr0MCphMhUGyV8oWtCenD4f6zwAuxFowIs4jnDqhQ"/></div>
-</div>
-</div>
-</section>
+
+<main class="max-w-7xl mx-auto px-6 pt-8">
+
+  <div class="mb-8">
+    <h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-1">Saved Places</h2>
+    <p class="text-on-surface-variant text-sm">Your saved spots, grouped by destination</p>
+  </div>
+
+  <!-- Dynamic grid -->
+  <div id="saved-grid" class="grid grid-cols-1 md:grid-cols-12 gap-6"></div>
+
+  <!-- Empty state -->
+  <div id="saved-empty" class="hidden text-center py-16">
+    <div class="text-6xl mb-4">🤍</div>
+    <p class="font-headline font-bold text-xl text-on-surface mb-2">Nothing saved yet</p>
+    <p class="text-on-surface-variant text-sm mb-6">Explore destinations and tap the heart to save places.</p>
+    <a href="explore.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-bold text-sm">
+      <span class="material-symbols-outlined text-base" translate="no">travel_explore</span>
+      Start Exploring
+    </a>
+  </div>
+
 </main>
-<nav class="fixed bottom-0 w-full z-50 px-4 pb-8">
-<div class="bg-[#f2edea]/80 backdrop-blur-3xl fixed bottom-6 left-6 right-6 rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center py-2 px-2">
-<a class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full" href="explore.html"><span class="material-symbols-outlined">travel_explore</span><span class="text-[11px] font-semibold">Explore</span></a>
-<a class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full" href="journal.html"><span class="material-symbols-outlined">book</span><span class="text-[11px] font-semibold">Journal</span></a>
-<a class="flex flex-col items-center justify-center bg-[#DCAE96] text-white rounded-full p-3 scale-110 shadow-md" href="saved.html"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">favorite</span><span class="text-[11px] font-semibold">Saved</span></a>
-<a class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full" href="sync.html"><span class="material-symbols-outlined">sync</span><span class="text-[11px] font-semibold">Sync</span></a>
-<a class="flex flex-col items-center justify-center text-[#34322F] p-3 rounded-full" href="profile.html"><span class="material-symbols-outlined">person</span><span class="text-[11px] font-semibold">Profile</span></a>
-</div>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-6 pt-2">
+  <div class="bg-[#F2EDEA]/85 backdrop-blur-3xl rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-2 py-2">
+    <a href="explore.html" class="nav-item"><span class="material-symbols-outlined" translate="no">travel_explore</span><span>Explore</span></a>
+    <a href="trips.html" class="nav-item"><span class="material-symbols-outlined" translate="no">book</span><span>Journal</span></a>
+    <a href="saved.html" class="nav-item active"><span class="material-symbols-outlined" translate="no">favorite</span><span>Saved</span></a>
+    <a href="sync.html" class="nav-item"><span class="material-symbols-outlined" translate="no">sync</span><span>Sync</span></a>
+    <a href="profile.html" class="nav-item"><span class="material-symbols-outlined" translate="no">person</span><span>Profile</span></a>
+  </div>
 </nav>
+
+<script src="../assets/js/saved.js"></script>
 </body>
 </html>
-

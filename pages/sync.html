@@ -12,7 +12,7 @@
 <!-- Fonts -->
 <!-- Icons -->
 </head>
-<body class="bg-background text-on-surface font-body min-h-screen">
+<body class="bg-background text-on-surface font-body min-h-screen pb-36">
 <!-- TopAppBar -->
 <header class="w-full top-0 sticky z-50 bg-[#FDF8F5] dark:bg-[#1C1B1A] tonal-shift bg-[#F2EDEA] dark:bg-[#2A2826] flex items-center justify-between px-6 py-4 w-full">
 <div class="flex items-center gap-4">
@@ -178,30 +178,14 @@
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-8 md:hidden">
-<div class="bg-[#F2EDEA]/80 backdrop-blur-3xl fixed bottom-6 left-6 right-6 rounded-[3rem] overflow-hidden flex justify-around items-center px-4 py-2 shadow-[0_12px_40px_rgba(52,50,47,0.06)]">
-<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="explore.html">
-<span class="material-symbols-outlined">travel_explore</span>
-<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Explore</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="journal.html">
-<span class="material-symbols-outlined">book</span>
-<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Journal</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="saved.html">
-<span class="material-symbols-outlined">favorite</span>
-<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Saved</span>
-</a>
-<!-- Active State: Sync -->
-<a class="flex flex-col items-center justify-center bg-[#DCAE96] dark:bg-[#7A5642] text-white rounded-full p-4 active:scale-90 duration-200 ease-out" href="sync.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sync</span>
-<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Sync</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#34322F] dark:text-[#FDF8F5] p-3 hover:bg-[#C9E6D7] transition-colors active:scale-90 duration-200 ease-out" href="profile.html">
-<span class="material-symbols-outlined">person</span>
-<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold mt-1">Profile</span>
-</a>
-</div>
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-6 pt-2">
+  <div class="bg-[#F2EDEA]/85 backdrop-blur-3xl rounded-[3rem] shadow-[0_12px_40px_rgba(52,50,47,0.06)] flex justify-around items-center px-2 py-2">
+    <a href="explore.html" class="nav-item"><span class="material-symbols-outlined" translate="no">travel_explore</span><span>Explore</span></a>
+    <a href="trips.html" class="nav-item"><span class="material-symbols-outlined" translate="no">book</span><span>Journal</span></a>
+    <a href="saved.html" class="nav-item"><span class="material-symbols-outlined" translate="no">favorite</span><span>Saved</span></a>
+    <a href="sync.html" class="nav-item active"><span class="material-symbols-outlined" translate="no">sync</span><span>Sync</span></a>
+    <a href="profile.html" class="nav-item"><span class="material-symbols-outlined" translate="no">person</span><span>Profile</span></a>
+  </div>
 </nav>
 </body></html>
 
